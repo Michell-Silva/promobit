@@ -1,0 +1,34 @@
+version: '3'
+services:
+    php:
+        build: php
+        container_name: promobit_php
+        volumes:
+            - '../site/promobit:/var/www/html'
+            - './php/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini'
+        networks:
+            promobit:
+                ipv4_address: 172.20.0.4
+
+    mysql:
+        image: 'mysql:5.7'
+        container_name: promobit_mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=promobit
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=root
+        ports:
+            - '8002:3306'
+        networks:
+            promobit:
+                ipv4_address: 172.20.0.5
+networks:
+    promobit:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.20.0.0/16
+
+     
