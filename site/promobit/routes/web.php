@@ -30,9 +30,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/', [AuthController::class, 'dashboard'])->name('dashboard');
-    Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('login');
-    Route::post('/admin/logout', [AuthController::class, 'logout'])->name('logout');
-    Route::post('/admin/login/do', [AuthController::class, 'login'])->name('login.do');
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/login/do', [AuthController::class, 'login'])->name('login.do');
 
 
     Route::resource('products', ProductController::class);

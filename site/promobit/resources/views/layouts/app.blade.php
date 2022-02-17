@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Promobit-teste') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -41,8 +41,8 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (request()->path() == "register" || request()->path() == "/" )
-                                <li class="nav-item @if(request()->path() === "login") active @endif()">
+                            @if (request()->path() == "register")
+                                <li class="nav-item @if(request()->path() == "admin/login") active @endif()">
                                     <a class="nav-link" href="{{ route('admin.login') }}">
                                         {{ __('Login') }}
                                         <i class="fa fa-fw fa-user"></i>

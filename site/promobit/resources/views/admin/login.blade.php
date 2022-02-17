@@ -5,6 +5,7 @@
 @section('content')
 <form class="form-signin" method="post" action="{{route('admin.login.do')}}">
     @csrf
+    <h1 class="h3 mb-3 font-weight-normal text-center">Login</h1>
     <img class="mb-4" src="https://www.w3schools.com/howto/img_avatar2.png" alt="">
 
     @if($errors->all())
@@ -15,8 +16,6 @@
         @endforeach
     @endif
 
-    <h1 class="h3 mb-3 font-weight-normal text-center">Login</h1>
-
     <label for="email" class="sr-only">Email</label>
     <input type="text" name="email" id="email" class="form-control" placeholder="Email" required autofocus>
 
@@ -24,7 +23,7 @@
     <input type="password" name="password" id="password" class="form-control mt-2" placeholder="Senha" required>
 
     <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Entrar</button>
-    <p class="mt-4 mb-3 text-muted text-center">&copy; Promobit 2022</p>
+    <p class="mt-4 mb-3 text-muted text-center">&copy; Michell Silva 2022</p>
 </form>
 
 
