@@ -5,7 +5,7 @@
 No terminal entre na pasta (/docker) e execute o comando:
 
 ```bash
-docker-composer up -d
+docker-compose up -d
 ```
 Obs: criar o banco de dados no conteiner promobit_mysql, no terminal na pasta (/docker)
 ```
